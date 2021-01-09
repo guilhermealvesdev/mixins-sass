@@ -1,0 +1,79 @@
+@import "mixins";
+@import "variaveis";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    font-size:62.5%;
+}
+
+body {
+    background-color:$dark-1;
+    color:#eaeaea;
+    height:100vh;
+    font-family: 'Montserrat', sans-serif;
+
+    @media (max-width:991px) {
+        padding:1.5rem;
+    }
+}
+
+.container {
+    max-width:100rem;
+    margin:1rem auto 0;
+
+    .titulo {
+        font-size:3rem;
+        text-align:center;
+        margin-top:5rem;
+    }
+
+    .mixins {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap:1rem;
+        margin-top:2rem;
+
+        .mixin {
+            padding:1rem 1.5rem;
+            border-radius:.5rem;
+            border:.1rem solid #999999;
+
+            &__titulo {
+                font-size:2rem;
+                margin-bottom:1rem;
+            }
+
+            &__explicacao {
+                font-size:1.6rem;
+                margin-bottom:1rem;
+            }
+
+            &__source {
+                font-size:1.6rem;
+                color:$blue-1;
+            }
+
+            &__sandbox {
+                background-color:$sandbox;
+                margin-top:1rem;
+                padding:1rem;
+                border-radius:.5rem;
+                font-size:1.5rem;
+            }
+        }
+    }
+}
+
+
+/* Triângulo */
+
+.triangle {
+    @include triangle(1rem, left);
+}
